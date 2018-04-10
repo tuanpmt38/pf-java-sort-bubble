@@ -4,13 +4,15 @@ public class BubbleSortv2 {
         boolean needNextPass = true;
         int temp;
         for (int i = 1; i < number.length && needNextPass; i++) {
+            /* Array may be sorted and next pass not needed */
             needNextPass = false;
             for (int j = 0; j < number.length - 1; j++) {
                 if (number[j] > number[j + 1]) {
+                    /* Swap list[i] with list[i + 1] */
                     temp = number[j];
                     number[j] = number[j + 1];
                     number[j + 1] = temp;
-                    needNextPass = true;
+                    needNextPass = true;/* Next pass still needed */
                 }
             }
         }
